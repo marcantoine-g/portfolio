@@ -64,7 +64,6 @@
     function fadeInProjects(entries){
         entries.forEach(entry=>{
             if(entry.intersectionRatio> 0.5){
-                console.log(entry.target);
                 entry.target.style.animation="fadeIn 1s ease-in-out";
                 entry.target.style.visibility="visible"
             }

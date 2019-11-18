@@ -205,7 +205,7 @@ nav{
   display: flex;
   height: 100vh;
   overflow: hidden;
-  background: url(/assets/bg_about.svg) no-repeat;
+  background: url(./assets/bg_about.svg) no-repeat;
   background-size: cover;
 }
 
