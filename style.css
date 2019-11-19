@@ -377,6 +377,7 @@ nav{
     font-size: 12px;
   }
   #cvButton{
+    z-index: 1;
     margin: 20px auto 0;
     width: auto;
     min-height: 50px;
