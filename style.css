@@ -379,6 +379,7 @@ nav{
   #cvButton{
     margin: 5vh auto 0;
     width: auto;
+    min-height: 50px;
   }
   .rightSide {
     width: 100%;
