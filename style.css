@@ -39,7 +39,7 @@ nav{
 .navPagination{
   display: flex;
   justify-content: space-around;
-  width: 30%;
+  width: 460px;
   align-items: center;
   margin: 0 5%;
 
@@ -72,12 +72,13 @@ nav{
   height: 100vh;
   grid-template-rows: 1fr 1fr 1fr 1fr 10%;
   grid-template-columns: 5% 1fr 1fr 5%;
+  overflow-x: hidden;
 }
 
 #titles{
   grid-row: 2;
   grid-column: 2;
-  margin: 0;
+  margin-top: 10px;
 }
 .subtitle{
   font-size: 36px;
@@ -107,10 +108,13 @@ nav{
   height: 73px;
   border-radius: 15px;
   background-color: var(--hard-blue);
-  margin-right: 50px;
   padding: 0 20px;
   font-weight: bold;
   font-size: 24px;
+  width: 100%;
+  min-width: 185px;
+  margin: 10px;
+  margin-left: 0;
 }
 .blueButton>a{
   color: #ffffff;
@@ -122,6 +126,8 @@ nav{
   border-radius: 15px;
   border: solid var(--middle-blue) 4px;
   padding: 0 20px;
+  width: 100%;
+  margin: 10px auto;
 }
 #contactButton>a{
   margin: auto;
@@ -142,7 +148,9 @@ nav{
   width: 100%;
   justify-content: center;
 }
-  
+.scrollIllustration > a > svg {
+  margin-left: 20px;
+}
 #circle--shape{
   animation: animateShape 1.5s ease-out infinite;
 }
@@ -155,6 +163,48 @@ nav{
   }
 }
 
+@media (max-width: 540px) {
+  #home{
+    grid-template-rows: 10vh 1fr 1fr 1fr 1fr 10%;
+    grid-template-columns: 5% 1fr 5%;
+  }
+  .subtitle{
+    font-size: 24px;
+  }
+  .homeTitle{
+    font-size: 36px;
+  }
+  .quote{
+    font-size: 12px;
+  }
+  .homeIllustration{
+    grid-row: 4;
+    grid-column: 2;
+    width: 130px;
+    margin-bottom: 10px;
+  }
+  #homeButtons{
+    grid-row: 5;
+    font-size: 18px;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: auto;
+  }
+  .blueButton{
+    font-size: 18px;
+    height: 50px;
+    padding: 0 10px;
+    min-width: 0;
+  }
+  #contactButton{
+    height: 42px;
+    padding: 0 10px;
+  }
+  #about{
+    min-width: 90px;
+    text-align: center;
+  }
+}
 
 
 
@@ -173,19 +223,38 @@ nav{
   width: 250px;  
 }
 #projects>p{
+  margin: 10px 5vw;
+}
+.mainTitle{
+  position: relative;
+  font-size: 36px;
+  font-weight: bold;
+  padding: 10vh 10px 0 10px;
   margin-left: 5vw;
 }
+
+.mainTitle::after{
+  z-index: -1;
+  content:"";
+  position: absolute;
+  width: 193px;
+  height: 15px;
+  top: 85%;
+  left: 0%;
+  background-color: var(--light-blue);
+}
+
 .allProjects{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
 .project{
-  margin: 50px 0;
+  margin: 50px 10px;
   background: var(--light-blue);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
-  width: 35vw;
+  width: 500px;
   height: 60vh;
 }
 
@@ -198,6 +267,38 @@ nav{
   }
 }
 
+@media (max-width: 540px) {
+  .mainTitle{
+    font-size: 24px;
+    padding-top: 10px;
+    margin-top: 10vh;
+  }
+  #projects > h2::after {
+    width: 173px;
+    height: 10px;
+    top:71%;
+  }
+  .allProjects {
+    flex-direction: column;
+  }
+  .project {
+    margin: 5vh auto;
+    width: 300px;
+    height: 35vh;
+  }
+  #projects>p{
+    font-size: 12px;
+  }
+
+  @keyframes fadeIn{
+    0%{
+      height: 0;
+    }
+    100%{
+      height: 40vh;
+    }
+  }
+}
 
 
 /* About Page */
@@ -216,31 +317,13 @@ nav{
 .rightSide>img{
   margin-bottom: auto;
   width: 95%;
+  min-width: 750px;
 }
 .leftSide{
   display: flex;
   flex-direction: column;
   width: 40%;
-}
-
-
-.mainTitle{
-  position: relative;
-  font-size: 36px;
-  font-weight: bold;
-  padding: 10vh 10px 0 10px;
-  margin-left: 5vw;
-}
-
-.mainTitle::after{
-  z-index: -1;
-  content:"";
-  position: absolute;
-  width: 193px;
-  height: 15px;
-  top: 85%;
-  left: 0%;
-  background-color: var(--light-blue);
+  min-width: 350px;
 }
 
 .aboutText{
@@ -261,10 +344,50 @@ nav{
 #cvButton{
   width: 300px;
   margin: 10vh 5vw;
+  min-width: 250px;
 }
-
-
-
+#cvButton>a{
+  margin: auto;
+  padding: 10px;
+}
+@media (max-width: 540px) {
+  #about{
+    flex-direction: column;
+    text-align: initial;
+    background-position: -100px;
+  }
+  .leftSide{
+    width: 100%;
+  }
+  .mainTitle::after{
+    top: 71%;
+    width: 140px;
+    height: 10px;
+  }
+  #bonjour{
+    font-size: 18px;
+  }
+  .aboutText {
+    margin-top: 10vh;
+  }
+  .aboutText>p{
+    font-size: 12px;
+  }
+  #cvButton{
+    margin: 5vh auto 0;
+    width: auto;
+  }
+  .rightSide {
+    width: 100%;
+    height: 160px;
+  }
+  .rightSide > img {
+    min-width: auto;
+    margin: 0 auto;
+    height: 90%;
+  }
+}
+ 
 
 
 
