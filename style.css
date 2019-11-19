@@ -164,8 +164,11 @@ nav{
 }
 
 @media (max-width: 540px) {
+  .scrollIllustration{
+    display: none;
+  }
   #home{
-    grid-template-rows: 10vh 1fr 1fr 1fr 1fr 10%;
+    grid-template-rows: 10vh 1fr 1fr 1fr 1fr;
     grid-template-columns: 5% 1fr 5%;
   }
   .subtitle{
