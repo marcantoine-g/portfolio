@@ -345,9 +345,8 @@ nav{
 }
 
 #cvButton{
-  width: 300px;
+  width: 150px;
   margin: 10vh 5vw;
-  min-width: 250px;
 }
 #cvButton>a{
   margin: auto;
