@@ -1,10 +1,3 @@
-function showDetails(event){
-    for (let index = 0; index < event.children.length; index++) {
-            event.children[index].style.opacity = 1;        
-    }
-}
-
-
 // Intersections Observers 
 
     // NavLink changed to bold
@@ -56,24 +49,30 @@ function showDetails(event){
     // Projects fade-in
     var optionsProjects ={
         root: null,
-        rootMargin: '400px',
-        threshold: 0.1
+        rootMargin: '100px',
+        threshold: 0.5
     }
     var observerProjects = new IntersectionObserver(fadeInProjects, optionsNavLink);
 
     const projects = document.getElementsByClassName('project');
     for (let i = 0; i < projects.length; i++) {
         observerProjects.observe(projects[i]);
-        projects[i].style.visibility="hidden";
     }
 
 
     function fadeInProjects(entries){
         entries.forEach(entry=>{
             if(entry.intersectionRatio> 0.5){
-                entry.target.style.animation="fadeIn 1s ease-in-out";
-                entry.target.style.visibility="visible"
+                entry.target.classList.add('fadeIn');
             }
         });
     }
+
+    // Projects details visible
+    // var optionsDetails = {
+    //     root: null,
+    //     rootMargin: '400px',
+    //     threshold: 0.1
+    // }
+    // var observerDetails = new IntersectionObserver(setVisible, optionsDetails);
 
