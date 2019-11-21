@@ -272,7 +272,7 @@ nav{
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   width: 500px;
-  height: 60vh;
+  min-height: 60vh;
 }
 .project > img{
   position: absolute;
@@ -289,6 +289,7 @@ nav{
   flex-direction: column;
   opacity: 0;
   transition: 0.2s linear;
+  justify-content: space-around;
 }
 .project_overlay h3{
   font-size: 48px;
@@ -297,7 +298,7 @@ nav{
 .project_overlay > * {
   margin: 5%;
 }
-.project_overlay:hover{
+.project_overlay:hover, .project_overlay:focus{
   opacity: 1;
 }
 .buttonsProject{
@@ -308,11 +309,9 @@ nav{
 .buttonsProject > div{
   font-size: 18px;
   min-width: 150px;
-  height: 50px;
+  max-height: 60px;
   margin: 5%;
 }
-
-
 .buttonsProject > .blueButton {
   border: 4px solid rgba(0, 0, 0, 0);
 }
@@ -342,11 +341,19 @@ nav{
   }
   .project {
     margin: 5vh auto;
-    width: 300px;
-    height: 35vh;
+    width: 80vw;
+    min-height: 50vh;
   }
-  #projects>p{
+  .project_overlay>p{
     font-size: 12px;
+  }
+  .project_overlay h3{
+    font-size: 24px;
+  }
+  .buttonsProject > div{
+    font-size: 12px;
+    min-width: 50px;
+    max-height: 40px;
   }
 
   @keyframes fadeIn{
