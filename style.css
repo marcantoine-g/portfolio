@@ -253,12 +253,20 @@ nav{
   justify-content: space-evenly;
 }
 .project{
+  background: radial-gradient(var(--light-blue), var(--middle-blue));
   margin: 50px 10px;
-  background: var(--light-blue);
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
   width: 500px;
   height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.project img{
+  width: 50%;
+  margin: auto;
+
 }
 
 @keyframes fadeIn{
