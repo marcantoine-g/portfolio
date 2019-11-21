@@ -1,3 +1,10 @@
+function showDetails(event){
+    for (let index = 0; index < event.children.length; index++) {
+            event.children[index].style.opacity = 1;        
+    }
+}
+
+
 // Intersections Observers 
 
     // NavLink changed to bold
