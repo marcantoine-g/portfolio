@@ -69,7 +69,8 @@
     }
 
     // Projects details visible if mobile device
-    if(window.innerWidth<540){
+    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    if(width<540){
         var optionsDetails = {
             root: null,
             rootMargin: '-100px',
