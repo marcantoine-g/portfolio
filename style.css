@@ -97,10 +97,14 @@ nav{
   grid-column: 2;
 }
 .socialMediaLinks > a {
-  
-  font-style: italic;
+  display: flex;
+  color: grey;
 }
-
+.socialMediaLinks > a > img{
+  height: 30px;
+  align-self: center;
+  margin-right: 15px;
+}
 #homeButtons{
   grid-row: 4;
   grid-column: 2;
