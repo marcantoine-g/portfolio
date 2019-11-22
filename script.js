@@ -78,7 +78,6 @@
         var observerDetails = new IntersectionObserver(setVisible, optionsDetails);
 
         const projects_overlay = document.getElementsByClassName('project_overlay');
-        console.log(projects_overlay);
         for (let index = 0; index < projects_overlay.length; index++) {
             observerDetails.observe(projects_overlay[index]);
         }
@@ -89,7 +88,6 @@
                     entry.target.style.opacity=1;
                 } else {
                     entry.target.style.opacity=0;
-                    console.log(entry.target.style.opacity);
                 }
             });
         }
