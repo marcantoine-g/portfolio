@@ -298,6 +298,7 @@ nav{
   opacity: 1;
   height: 60vh;
 }
+
 .project > img{
   position: absolute;
   width: 50%;
@@ -314,6 +315,7 @@ nav{
   opacity: 0;
   transition: 0.2s linear;
   justify-content: space-around;
+  width: 100%;
 }
 .project_overlay h3{
   font-size: 48px;
@@ -360,6 +362,9 @@ nav{
   }
   .fadeIn {
     height: 50vh;
+  }
+  #presentationSite{
+    display: none;
   }
   .project_overlay>p{
     font-size: 12px;

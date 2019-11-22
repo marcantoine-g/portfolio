@@ -1,10 +1,19 @@
-// Intersections Observers 
 
+// Get the width of the screen to know if is a mobile device
+var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+
+// Intersections Observers 
     // NavLink changed to bold
+    var rootMargin;
+    if(width<540){
+        rootMargin = "-100px"; 
+    }else{
+        rootMargin = "-250px";
+    }
     var optionsNavLink ={
         root: null,
-        rootMargin: '100px',
-        threshold: 0.5
+        rootMargin: rootMargin,
+        threshold: 0.1
     }
     var observerNavLink = new IntersectionObserver(changeActiveNavElement, optionsNavLink);
 
@@ -22,7 +31,7 @@
 
     function changeActiveNavElement(entries){
         entries.forEach(entry => {
-            if(entry.intersectionRatio> 0.5){
+            if(entry.intersectionRatio> 0.1){
                 switch (entry.target.id){
                     case 'home':
                         homeLink.classList.add('isActive');
@@ -49,10 +58,10 @@
     // Projects fade-in
     var optionsProjects ={
         root: null,
-        rootMargin: '100px',
-        threshold: 0.5
+        rootMargin: '-100px',
+        threshold: 0.7
     }
-    var observerProjects = new IntersectionObserver(fadeInProjects, optionsNavLink);
+    var observerProjects = new IntersectionObserver(fadeInProjects, optionsProjects);
 
     const projects = document.getElementsByClassName('project');
     for (let i = 0; i < projects.length; i++) {
@@ -69,7 +78,6 @@
     }
 
     // Projects details visible if mobile device
-    var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
     if(width<540){
         var optionsDetails = {
             root: null,
