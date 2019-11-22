@@ -68,11 +68,30 @@
         });
     }
 
-    // Projects details visible
-    // var optionsDetails = {
-    //     root: null,
-    //     rootMargin: '400px',
-    //     threshold: 0.1
-    // }
-    // var observerDetails = new IntersectionObserver(setVisible, optionsDetails);
+    // Projects details visible if mobile device
+    if(window.innerWidth<540){
+        var optionsDetails = {
+            root: null,
+            rootMargin: '-100px',
+            threshold: 0.5
+        }
+        var observerDetails = new IntersectionObserver(setVisible, optionsDetails);
+
+        const projects_overlay = document.getElementsByClassName('project_overlay');
+        console.log(projects_overlay);
+        for (let index = 0; index < projects_overlay.length; index++) {
+            observerDetails.observe(projects_overlay[index]);
+        }
+
+        function setVisible(entries){
+            entries.forEach(entry => {
+                if(entry.intersectionRatio> 0.5){
+                    entry.target.style.opacity=1;
+                } else {
+                    entry.target.style.opacity=0;
+                    console.log(entry.target.style.opacity);
+                }
+            });
+        }
+    }
 
