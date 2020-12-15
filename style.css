@@ -296,7 +296,7 @@ nav{
 }
 .fadeIn {
   opacity: 1;
-  height: 60vh;
+  height: 50vh;
 }
 
 .project > img{
@@ -469,5 +469,22 @@ nav{
 }
  
 
+/* Details section */
+#homeInvivo { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
 
-
+#homeInvivo .homeTitle {
+  padding-left: 5%;
+}
+#homeInvivo div {
+  display: flex;
+  flex-direction: row;
+  padding: 5%;
+}
+#homeInvivo div p{
+  padding: 5%;
+}
